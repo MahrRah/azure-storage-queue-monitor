@@ -14,12 +14,9 @@ azure-storage-queue = "^12.8.1"
 azure-identity = "^1.6.0"
 pydantic = "^2.8.2"
 pydantic-settings = "^2.0.0"
-
-[tool.poetry.dev-dependencies]
 black = "^24.8.0"
 isort = "^5.13.2"
-pytest = "^6.2.5"
-mypy = "^0.910"
+requests = "^2.32.3"
 
 
 [build-system]
