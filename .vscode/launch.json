@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python Debugger: Current File",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/.env",
+    },
+    {
+      "name": "Debug durable function",
+      "type": "python",
+      "request": "attach",
+      "port": 9091,
+      "preLaunchTask": "Start function",
+      "justMyCode": false,
+      "cwd": "${workspaceFolder}/src"
+    },
+  ]
+}

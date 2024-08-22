@@ -22,15 +22,14 @@ class MonitorSettings(BaseSettings):
     )
 
     @field_validator("MONITORED_QUEUES", mode="before", check_fields=False)
-    def parse_connections(cls, v: any):  # noqa: N805
-        def parse_connections(cls, v: str):
-            """
-            Parse the given string in case //TODO
-            Args:
-                v (str): either string or
-            Returns:
-                The parsed connections.
-            """
+    def parse_connections(cls, v): 
+        """
+        Parse the given string in case //TODO
+        Args:
+            v (str): either string or
+        Returns:
+            The parsed connections.
+        """
 
         if isinstance(v, str):
             return json.loads(v)

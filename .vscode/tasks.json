@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "func",
+			"label": "Start function",
+			"command": "host start --verbose",
+			"problemMatcher": "$func-python-watch",
+			"isBackground": true,
+			"options": {
+				"cwd": "${workspaceFolder}/src"
+			},
+		},
+	
+	]
+}

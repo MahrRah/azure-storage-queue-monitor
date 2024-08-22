@@ -1,0 +1,10 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "AzureWebJobsSecretStorageType": "files",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "APPLICATIONINSIGHTS_CONNECTION_STRING": "<connection-string>",
+    "MONITORED_QUEUES": "[{\"queue_name\":\"demo-queue-1\",\"storage_account_url\":\"http://127.0.0.1:10001/devstoreaccount1\",\"storage_account_key\":\"Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==\"},{\"queue_name\":\"demo-queue-2\",\"storage_account_url\":\"http://127.0.0.1:10001/devstoreaccount1\",\"Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==\"}]"
+  }
+}
