@@ -1,10 +1,13 @@
 import logging
 
 import azure.functions as func
-from .metric_setup import (create_azure_storage_queue_clients,
-                          create_metric_gauge, get_queue_gauge_name)
 from opentelemetry.metrics import get_meter_provider
 
+from .metric_setup import (
+    create_azure_storage_queue_clients,
+    create_metric_gauge,
+    get_queue_gauge_name,
+)
 from .monitor_settings import MonitorSettings
 
 logger = logging.getLogger(__name__)

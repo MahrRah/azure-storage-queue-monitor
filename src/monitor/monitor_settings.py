@@ -22,7 +22,7 @@ class MonitorSettings(BaseSettings):
     )
 
     @field_validator("MONITORED_QUEUES", mode="before", check_fields=False)
-    def parse_connections(cls, v): 
+    def parse_connections(cls, v):
         """
         Parse the given string in case //TODO
         Args:

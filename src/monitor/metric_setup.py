@@ -9,6 +9,7 @@ from monitor.monitor_settings import MonitorQueueInformation
 
 default_credential = DefaultAzureCredential()
 
+
 def create_azure_storage_queue_clients(
     monitoring_queues: List[MonitorQueueInformation | None],
 ) -> dict[str, QueueClient]:
