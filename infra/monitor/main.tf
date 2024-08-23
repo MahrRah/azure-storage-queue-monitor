@@ -37,9 +37,9 @@ resource "azurerm_linux_function_app" "orchestrator_function_app" {
 
   app_settings = {
     AzureWebJobsDisableHomepage         = true
-    WEBSITES_ENABLE_APP_SERVICE_STORAGE = false 
-    WEBSITE_PULL_IMAGE_OVER_VNET        = true  
-    PYTHON_ENABLE_WORKER_EXTENSIONS     = 1     
+    WEBSITES_ENABLE_APP_SERVICE_STORAGE = false
+    WEBSITE_PULL_IMAGE_OVER_VNET        = true
+    PYTHON_ENABLE_WORKER_EXTENSIONS     = 1
     DURABLE_TASK_HUB_NAME               = "TESTHUB"
     MONITORED_QUEUES                    = jsonencode(var.monitoring_queue_name)
   }

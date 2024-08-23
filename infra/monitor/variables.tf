@@ -19,8 +19,11 @@ variable "appinsight_connection_string" {
 }
 variable "monitoring_queue_name" {
   description = "Name of the queue"
-  type        = list(string)
-  default     = []
+  type = list(object({
+    storage_account_url = string
+    queue_name          = string
+  }))
+  default = []
 }
 
 

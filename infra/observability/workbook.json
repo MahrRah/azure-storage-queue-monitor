@@ -1,0 +1,135 @@
+{
+    "version": "Notebook/1.0",
+    "items": [
+      {
+        "type": 1,
+        "content": {
+          "json": "## Most awesome workbook for queue length 🚀\n---\n\nWelcome to your amazing workbook that was created using Terraform!\n"
+        },
+        "name": "text - 2"
+      },
+      {
+        "type": 9,
+        "content": {
+          "version": "KqlParameterItem/1.0",
+          "parameters": [
+            {
+              "id": "42a21309-6dda-451f-a562-d7008472aa41",
+              "version": "KqlParameterItem/1.0",
+              "name": "time_range",
+              "label": "Time Rang",
+              "type": 4,
+              "typeSettings": {
+                "selectableValues": [
+                  {
+                    "durationMs": 300000
+                  },
+                  {
+                    "durationMs": 900000
+                  },
+                  {
+                    "durationMs": 1800000
+                  },
+                  {
+                    "durationMs": 3600000
+                  },
+                  {
+                    "durationMs": 14400000
+                  },
+                  {
+                    "durationMs": 43200000
+                  },
+                  {
+                    "durationMs": 86400000
+                  },
+                  {
+                    "durationMs": 172800000
+                  },
+                  {
+                    "durationMs": 259200000
+                  },
+                  {
+                    "durationMs": 604800000
+                  },
+                  {
+                    "durationMs": 1209600000
+                  },
+                  {
+                    "durationMs": 2419200000
+                  },
+                  {
+                    "durationMs": 2592000000
+                  },
+                  {
+                    "durationMs": 5184000000
+                  },
+                  {
+                    "durationMs": 7776000000
+                  }
+                ]
+              },
+              "timeContext": {
+                "durationMs": 86400000
+              },
+              "value": {
+                "durationMs": 14400000
+              }
+            }
+          ],
+          "style": "pills",
+          "queryType": 0,
+          "resourceType": "microsoft.insights/components"
+        },
+        "name": "parameters - 5"
+      },
+      {
+        "type": 10,
+        "content": {
+          "chartId": "68635b6c-49a6-4a25-8dbc-f786652a0124",
+          "version": "MetricsItem/2.0",
+          "size": 0,
+          "chartType": 2,
+          "resourceType": "microsoft.insights/components",
+          "metricScope": 0,
+          "resourceIds": [
+            "${ai_source_id}"
+          ],
+          "timeContext": {
+            "durationMs": 86400000
+          },
+          "metrics": [
+            {
+              "namespace": "azure.applicationinsights",
+              "metric": "azure.applicationinsights--demo-queue-1-length",
+              "aggregation": 4
+            }
+          ],
+          "gridSettings": {
+            "rowLimit": 10000
+          }
+        },
+        "name": "metric - 4"
+      },
+      {
+        "type": 3,
+        "content": {
+          "version": "KqlItem/1.0",
+          "query": "Alert",
+          "size": 0,
+          "timeContext": {
+            "durationMs": 86400000
+          },
+          "queryType": 0,
+          "resourceType": "microsoft.operationalinsights/workspaces",
+          "crossComponentResources": [
+            "${law_source_id}"
+          ]
+        },
+        "name": "query - 3"
+      }
+    ],
+    "fallbackResourceIds": [
+        "${ai_source_id}"
+    ],
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
+  }
