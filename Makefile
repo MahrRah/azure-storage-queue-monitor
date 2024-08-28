@@ -14,6 +14,12 @@ send-message:
 start:
 	cd src && poetry run func host start --port 7071 --verbose
 
+build:
+	cd src && docker build -t storage-queue-monitor:latest . && docker tag storage-queue-monitor qmsampleacr.azurecr.io/storage-queue-monitor && az acr login --name qmsampleacr && docker push qmsampleacr.azurecr.io/storage-queue-monitor:latest
+
+run-container:
+	cd src && docker run --env-file ./.env storage-queue-monitor:latest 
+
 format:
 	black . 
 	isort . 

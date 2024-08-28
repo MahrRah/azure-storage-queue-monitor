@@ -16,7 +16,6 @@ pydantic = "^2.8.2"
 pydantic-settings = "^2.0.0"
 black = "^24.8.0"
 isort = "^5.13.2"
-requests = "^2.32.3"
 
 
 [build-system]

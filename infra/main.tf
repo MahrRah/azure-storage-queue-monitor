@@ -85,5 +85,6 @@ module "monitor" {
   registry_password            = azurerm_container_registry.acr.admin_password
   image_name                   = "storage-queue-monitor"
   image_tag                    = "latest"
+  storage_account_name_id      = azurerm_storage_account.demo_storage_account.id
 
 }

@@ -1,7 +1,7 @@
 # Do not include azure-functions-worker as it may conflict with the Azure Functions platform
 azure-functions
-azure-identity>=1.6.0
+azure-monitor-opentelemetry>=1.6.1
 azure-storage-queue>=12.8.1
+azure-identity>=1.6.0
 pydantic>=2.8.2
 pydantic-settings>=2.0.0
-azure-monitor-opentelemetry>=1.6.1

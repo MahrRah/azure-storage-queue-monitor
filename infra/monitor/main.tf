@@ -15,9 +15,15 @@ resource "azurerm_service_plan" "azurerm_service_plan" {
   resource_group_name = var.resource_group_name
   location            = var.location
   os_type             = "Linux"
-  sku_name            = "Y1"
+  sku_name            = "EP1"
+  maximum_elastic_worker_count        = 1
 }
 
+resource "azurerm_user_assigned_identity" "mi_function_app" {
+  resource_group_name = var.resource_group_name
+  location            = var.location
+  name                = "example"
+}
 
 resource "azurerm_linux_function_app" "orchestrator_function_app" {
   name                          = "${var.prefix}-function-app"
@@ -35,6 +41,7 @@ resource "azurerm_linux_function_app" "orchestrator_function_app" {
   # https://learn.microsoft.com/en-us/azure/azure-functions/configure-monitoring?tabs=v2#disable-built-in-logging
   builtin_logging_enabled = false
 
+
   app_settings = {
     AzureWebJobsDisableHomepage         = true
     WEBSITES_ENABLE_APP_SERVICE_STORAGE = false
@@ -43,7 +50,9 @@ resource "azurerm_linux_function_app" "orchestrator_function_app" {
     DURABLE_TASK_HUB_NAME               = "TESTHUB"
     MONITORED_QUEUES                    = jsonencode(var.monitoring_queue_name)
   }
-
+  identity {
+    type = "SystemAssigned"
+  }
   sticky_settings {
     app_setting_names = ["DURABLE_TASK_HUB_NAME", "AzureWebJobs.process_aml_event.Disabled"]
   }
@@ -68,4 +77,10 @@ resource "azurerm_linux_function_app" "orchestrator_function_app" {
       }
     }
   }
+}
+
+resource "azurerm_role_assignment" "stoarge_account_role_assignment" {
+  scope                = var.storage_account_name_id
+  role_definition_name = "Storage Queue Data Contributor"
+  principal_id         = azurerm_linux_function_app.orchestrator_function_app.identity[0].principal_id
 }

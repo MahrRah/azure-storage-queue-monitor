@@ -50,3 +50,9 @@ variable "image_tag" {
   description = "Tag of the container image"
   type        = string
 }
+
+variable "storage_account_name_id" {
+  description = "ID of the storage account"
+  type        = string
+  
+}
