@@ -16,5 +16,4 @@ variable "location" {
 variable "poison_queue_names" {
   description = "Names of the poison queues"
   type        = list(string)
-
 }

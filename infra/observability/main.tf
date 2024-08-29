@@ -29,7 +29,7 @@ resource "azurerm_application_insights_workbook" "my_workbook" {
   display_name        = "My Awesome Workbook"
   source_id           = lower(azurerm_application_insights.app_insights.id)
   category            = "workbook"
-  data_json           = jsonencode(templatefile("${path.module}/workbook.json", { ai_source_id = lower(azurerm_application_insights.app_insights.id), law_source_id = lower(azurerm_log_analytics_workspace.log_analytics.id) }))
+  data_json           = jsonencode(templatefile("${path.module}/workbooks-template/workbook.json", { ai_source_id = lower(azurerm_application_insights.app_insights.id), law_source_id = lower(azurerm_log_analytics_workspace.log_analytics.id) }))
 }
 
 
@@ -57,7 +57,7 @@ resource "azurerm_monitor_scheduled_query_rules_alert_v2" "poison_queue_alert" {
     metric_measure_column   = "merticValue"
 
     dimension {
-      name     = "name" # creating timeseries for each poisen queue
+      name     = "name"
       operator = "Include"
       values   = ["*"]
     }

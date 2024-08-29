@@ -24,9 +24,9 @@ class MonitorSettings(BaseSettings):
     @field_validator("MONITORED_QUEUES", mode="before", check_fields=False)
     def parse_connections(cls, v):
         """
-        Parse the given string in case //TODO
+        Parse the environment variable MONITORED_QUEUES to a list of connections.
         Args:
-            v (str): either string or
+            v (str): either string or object
         Returns:
             The parsed connections.
         """
