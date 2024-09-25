@@ -2,7 +2,7 @@
 
 Have you ever used the [Azure Storage Account Queues](https://learn.microsoft.com/en-us/azure/storage/queues/storage-queues-introduction) and realized that you lack visibility into the number of messages in your individual queues? This can be particularly concerning when you have things like poison queues set up—you definitely want to know if something's in them, right? 🕵🏻‍♀️
 
-Of course, you could explore different tools like [Event Hub](https://learn.microsoft.com/en-gb/azure/event-hubs/) or [Event Grid](https://learn.microsoft.com/en-us/azure/event-grid/), but making a switch like that isn’t always feasible.
+Of course, you could explore different tools like [Service Bus](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview), but making a switch like that isn’t always feasible.
 
 **Not to worry—I’ve got a solution for you! 😉**
 
